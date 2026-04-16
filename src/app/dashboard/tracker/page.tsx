@@ -62,7 +62,15 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 // --- MOCK DATA ---
-const initialOpportunities = [];
+type Opportunity = {
+  id: number;
+  entity: string;
+  title: string;
+  type: string;
+  location: string;
+};
+
+const initialOpportunities: Opportunity[] = [];
 
 const initialSuggested = [
   { id: 101, entity: "Stripe", title: "Open Source Grant", type: "Grant", location: "Remote", value: "$50k No-Equity", match: 98, highlight: "Matches your OS contributions" },
