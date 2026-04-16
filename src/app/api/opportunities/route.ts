@@ -45,7 +45,7 @@ FORMAT:
       messages: [{ role: "user", content: prompt }],
     });
 
-    let result = completion.choices[0].message.content;
+    let result = completion.choices[0].message.content || "";
 
     result = result.replace(/```json/g, "").replace(/```/g, "").trim();
 
