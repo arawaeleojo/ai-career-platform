@@ -87,7 +87,7 @@ const COLUMNS = [
 export default function OpportunityTrackerPage() {
   const [user, setUser] = useState<any>(null);
   const [opportunities, setOpportunities] = useState(initialOpportunities);
-  const [suggestedJobs, setSuggestedJobs] = useState([]);
+  const [suggestedJobs, setSuggestedJobs] = useState<any[]>([]);
   const [keywords, setKeywords] = useState("");
   const [activeColumn, setActiveColumn] = useState("Pending");
 
