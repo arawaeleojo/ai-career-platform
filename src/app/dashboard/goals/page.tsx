@@ -29,7 +29,16 @@ const [goal, setGoal] = useState("");
 const [isGenerating, setIsGenerating] = useState(false);
 const [hasGenerated, setHasGenerated] = useState(false);
   const [user, setUser] = useState<any>(null);
-  const [plan, setPlan] = useState(null);
+  type PlanType = {
+  months: {
+    title: string;
+    description: string;
+    tasks: string[];
+  }[];
+};
+
+  const [plan, setPlan] = useState<PlanType | null>(null);
+  
 const [timeline, setTimeline] = useState("6 Months");
 const [intensity, setIntensity] = useState("Aggressive");
 
