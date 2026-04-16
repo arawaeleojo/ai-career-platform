@@ -22,8 +22,8 @@ const monthsMap = {
   "12 Months": 12,
 };
 
-const monthsCount = monthsMap[timeline] || 6;
-
+  const monthsCount = monthsMap[timeline as keyof typeof monthsMap] || 6;
+  
 const prompt =
   "You are a strict JSON generator.\n\n" +
 
