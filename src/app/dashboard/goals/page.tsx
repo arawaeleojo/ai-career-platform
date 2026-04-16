@@ -28,8 +28,8 @@ export default function GoalStrategistPage() {
 const [goal, setGoal] = useState("");
 const [isGenerating, setIsGenerating] = useState(false);
 const [hasGenerated, setHasGenerated] = useState(false);
-const [user, setUser] = useState(null);
-const [plan, setPlan] = useState(null);
+  const [user, setUser] = useState<any>(null);
+  const [plan, setPlan] = useState(null);
 const [timeline, setTimeline] = useState("6 Months");
 const [intensity, setIntensity] = useState("Aggressive");
 
