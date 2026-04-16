@@ -160,9 +160,13 @@ html2pdf.default().from(element).set(opt).save();
 if (!output) return;
 
 try {
-const text = typeof output === "string"
-? output
-    : output.props?.children || "";
+let text = "";
+
+if (typeof output === "string") {
+  text = output;
+} else if (typeof output === "object" && output !== null && "props" in output) {
+  text = (output as any).props?.children || "";
+}
   await navigator.clipboard.writeText(
   typeof text === "string" ? text : JSON.stringify(text)
 );
