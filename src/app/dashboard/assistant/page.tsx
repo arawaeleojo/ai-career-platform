@@ -126,11 +126,11 @@ html2canvas: {
   useCORS: true,
 
   // 🔥 THIS IS THE FIX
-  ignoreElements: (el) => {
+  ignoreElements: (el: HTMLElement) => {
     return el.style?.color?.includes("okl") || false;
   },
 
-  onclone: (doc) => {
+  onclone: (doc: Document) => {
     // Force safe styles globally
     const style = doc.createElement("style");
     style.innerHTML = `
