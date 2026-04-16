@@ -147,7 +147,7 @@ html2canvas: {
 jsPDF: {
   unit: "in",
   format: "a4",
-  orientation: "portrait",
+  orientation: "portrait" as "portrait",
   },
 };
 
