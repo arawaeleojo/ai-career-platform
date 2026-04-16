@@ -41,7 +41,7 @@ const [intensity, setIntensity] = useState("Aggressive");
 // getUser();
 // }, []);
 
-const handleGenerate = async (e) => {
+const handleGenerate = async (e: React.SyntheticEvent) => {
 e.preventDefault();
 
 console.log("🔥 BUTTON CLICKED");
