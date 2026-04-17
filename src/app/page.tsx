@@ -1,5 +1,6 @@
 'use client';
 
+import { Variants } from "framer-motion";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Target, Calendar, FileText, Share2, Globe, ArrowRight, Sparkles, CheckCircle2, Zap } from "lucide-react";
@@ -17,7 +18,7 @@ const staggerContainer = {
 
 const mockupPop = {
   hidden: { opacity: 0, scale: 0.9, y: 20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15, delay: 0.2 } }
+  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 15, delay: 0.2 } }
 };
 
 export default function Home() {
