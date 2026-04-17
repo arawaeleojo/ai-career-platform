@@ -29,16 +29,44 @@ const itemVariants = {
   }
 };
 
-const modalVariants = {
-  hidden: { opacity: 0, scale: 0.95, y: 20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } },
-  exit: { opacity: 0, scale: 0.95, y: 20, transition: { duration: 0.2 } }
+const modalVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.9, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring" as const,
+      stiffness: 120,
+      damping: 15,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.9,
+    y: 20,
+    transition: {
+      type: "spring" as const,
+      stiffness: 120,
+      damping: 15,
+    },
+  },
 };
 
-const overlayVariants = {
+const overlayVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-  exit: { opacity: 0 }
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
 };
 
 // --- HELPER FUNCTION: GET DYNAMIC ICON ---
@@ -86,7 +114,7 @@ const COLUMNS = [
 
 export default function OpportunityTrackerPage() {
   const [user, setUser] = useState<any>(null);
-  const [opportunities, setOpportunities] = useState(initialOpportunities);
+  const [opportunities, setOpportunities] = useState<any[]>(initialOpportunities);
   const [suggestedJobs, setSuggestedJobs] = useState<any[]>([]);
   const [keywords, setKeywords] = useState("");
   const [activeColumn, setActiveColumn] = useState("Pending");
