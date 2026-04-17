@@ -28,29 +28,6 @@ const itemVariants= {
   }
 }as any;
 
-const modalVariants= { 
-  hidden: { opacity: 0, scale: 0.9, y: 20 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      type: "spring" as const,
-      stiffness: 120,
-      damping: 15,
-    },
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.9,
-    y: 20,
-    transition: {
-      type: "spring" as const,
-      stiffness: 120,
-      damping: 15,
-    },
-  },
-}as any;
 
 const overlayVariants= {
   hidden: { opacity: 0 },
