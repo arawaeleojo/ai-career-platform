@@ -116,14 +116,20 @@ TEMPLATE:
 const completion = await groq.chat.completions.create({
   model: "llama-3.1-8b-instant",
   messages: [
-    { role: "system", content: prompt },
-    { role: "user", content: name },
+    {
+      role: "user",
+      content: prompt
+    }
   ],
 });
 
-const result = completion.choices[0].message.content;
+  const result = completion.choices[0].message.content;
+let clean = result
+  ?.replace(/```html/g, "")
+  ?.replace(/```/g, "")
+    ?.trim();
+  return Response.json({ result: clean });
 
-        return Response.json({ result });
 } catch (error) {
 console.error(error);
 return Response.json({ error: "Failed" }, { status: 500 });
