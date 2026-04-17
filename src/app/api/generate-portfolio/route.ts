@@ -13,18 +13,22 @@ You are a world-class copywriter and frontend UX expert.
 
 Your job is to FILL a premium, high-converting portfolio website template with compelling content.
 
-USER DATA:
-Name: ${name}
-Role: ${role}
-Bio: ${bio}
+USER DATA (DO NOT CHANGE THESE VALUES):
+- Name MUST be exactly: "${name}"
+- Role MUST be exactly: "${role}"
+- Bio MUST be exactly: "${bio}"
 
 INSTRUCTIONS:
 
-Replace ALL placeholders with high-quality, professional content
+
+You MUST use the exact Name, Role, and Bio provided
+DO NOT change, replace, or invent a new name
+DO NOT generate fictional names
+ONLY enhance descriptions where placeholders exist
+Return ONLY HTML
 Keep structure EXACTLY the same
 Do NOT remove styles or layout
 Do NOT explain anything
-Return ONLY HTML
 
 TEMPLATE:
 
