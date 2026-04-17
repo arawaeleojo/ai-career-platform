@@ -41,6 +41,7 @@ export default function PortfolioBuilderPage() {
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
   const [customColor, setCustomColor] = useState("#FFD700"); // Default custom color
   const [generatedCode, setGeneratedCode] = useState("");
+  const [showPreview, setShowPreview] = useState(false);
   
   // Form State
   const [formData, setFormData] = useState({
@@ -50,33 +51,35 @@ export default function PortfolioBuilderPage() {
     theme: THEMES[0] // Default to Neon Pink
   });
 
-  const handleGenerate = async () => {
-setIsGenerating(true);
-setHasGenerated(false);
+const handleGenerate = async () => {
+  setIsGenerating(true);
+  setHasGenerated(false);
 
-try {
-const res = await fetch("/api/generate-portfolio", {
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-},
-body: JSON.stringify({
-name: formData.name,
-role: formData.role,
-bio: formData.bio,
-theme: formData.theme,
-}),
-});
-  const data = await res.json();
+  try {
+    const res = await fetch("/api/generate-portfolio", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-setGeneratedCode(data.result);
-  setHasGenerated(true);
+    const data = await res.json();
+
+    if (!data.result) return;
+
+    setGeneratedCode(data.result);
+    setHasGenerated(true);
+
+    // 🔥 THIS IS THE KEY
+    setShowPreview(true);
+
   } catch (err) {
-console.error("ERROR:", err);
-}
+    console.error(err);
+  }
 
-setIsGenerating(false);
-  };
+  setIsGenerating(false);
+};
   
   const handleExportCode = () => {
 if (!generatedCode) return;
@@ -179,6 +182,7 @@ URL.revokeObjectURL(url);
       </motion.div>
 
       {/* ---------------- SPLIT PANE LAYOUT ---------------- */}
+      {!showPreview ? (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 min-h-[650px] pb-12">
         
         {/* LEFT PANE: CONFIGURATION ENGINE */}
@@ -438,7 +442,26 @@ URL.revokeObjectURL(url);
           </div>
         </motion.div>
 
-      </div>
+        </div> // closes grid
+
+) : (
+
+  <div className="fixed inset-0 z-50 bg-black">
+    <iframe
+      srcDoc={generatedCode}
+      className="w-full h-full border-none"
+    />
+
+    <button
+      onClick={() => setShowPreview(false)}
+      className="absolute top-4 left-4 bg-white text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+    >
+      ← Back
+    </button>
+  </div>
+
+)}
+        
     </motion.div>
   );
 }
