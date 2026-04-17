@@ -297,7 +297,13 @@ export default function OpportunityTrackerPage() {
         {isAddModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div variants={overlayVariants} initial="hidden" animate="visible" exit="exit" onClick={() => setIsAddModalOpen(false)} className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
-            <motion.div variants={modalVariants} initial="hidden" animate="visible" exit="exit" className="glass-card w-full max-w-lg p-6 sm:p-8 relative z-10 border-white/20 shadow-2xl bg-surface/90">
+<motion.div
+  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+  animate={{ opacity: 1, scale: 1, y: 0 }}
+  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+  transition={{ type: "spring", stiffness: 120, damping: 15 }}
+  className="glass-card w-full max-w-lg p-6 sm:p-8 relative z-10 border-white/20 shadow-2xl bg-surface/90"
+            >
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-text-primary">Add Opportunity</h2>
                 <button onClick={() => setIsAddModalOpen(false)} className="text-text-secondary hover:text-text-primary transition-colors"><X className="w-5 h-5" /></button>
