@@ -278,7 +278,7 @@ export default function OpportunityTrackerPage() {
   initial={{ opacity: 0, scale: 0.9, y: 20 }}
   animate={{ opacity: 1, scale: 1, y: 0 }}
   exit={{ opacity: 0, scale: 0.9, y: 20 }}
-  transition={{ type: "spring" as const, stiffness: 120, damping: 15 }}
+ transition={{ duration: 0.3 }}
   className="glass-card w-full max-w-lg p-6 sm:p-8 relative z-10 border-white/20 shadow-2xl bg-surface/90"
             >
               <div className="flex justify-between items-center mb-6">
@@ -325,7 +325,7 @@ export default function OpportunityTrackerPage() {
   initial={{ opacity: 0, scale: 0.9, y: 20 }}
   animate={{ opacity: 1, scale: 1, y: 0 }}
   exit={{ opacity: 0, scale: 0.9, y: 20 }}
-  transition={{ type: "spring" as const, stiffness: 120, damping: 15 }}
+  transition={{ duration: 0.3 }}
   className="glass-card w-full max-w-lg p-6 sm:p-8 relative z-10 border-white/20 shadow-2xl bg-surface/90"
             >
               <div className="flex justify-between items-center mb-6">
