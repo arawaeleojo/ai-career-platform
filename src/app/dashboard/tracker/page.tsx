@@ -273,8 +273,15 @@ export default function OpportunityTrackerPage() {
       <AnimatePresence>
         {isAddModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <motion.div variants={overlayVariants} initial="hidden" animate="visible" exit="exit" onClick={() => setIsAddModalOpen(false)} className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.2 }}
+  onClick={() => setIsAddModalOpen(false)}
+  className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            />
+            <motion.div
   initial={{ opacity: 0, scale: 0.9, y: 20 }}
   animate={{ opacity: 1, scale: 1, y: 0 }}
   exit={{ opacity: 0, scale: 0.9, y: 20 }}
