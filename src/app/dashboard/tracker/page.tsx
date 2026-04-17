@@ -1,6 +1,5 @@
 'use client';
 
-import { Variants } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,12 +10,12 @@ import {
 } from "lucide-react";
 
 // --- ANIMATION VARIANTS ---
-const containerVariants: Variants = { 
+const containerVariants= { 
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-};
+}as any;
 
-const itemVariants: Variants = { 
+const itemVariants= { 
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -25,11 +24,11 @@ const itemVariants: Variants = {
       type: "spring" as const,
       stiffness: 100,
       damping: 15
-    }as any
+    }
   }
-};
+}as any;
 
-const modalVariants: Variants = { 
+const modalVariants= { 
   hidden: { opacity: 0, scale: 0.9, y: 20 },
   visible: {
     opacity: 1,
@@ -39,7 +38,7 @@ const modalVariants: Variants = {
       type: "spring" as const,
       stiffness: 120,
       damping: 15,
-    }as any,
+    },
   },
   exit: {
     opacity: 0,
@@ -49,11 +48,11 @@ const modalVariants: Variants = {
       type: "spring" as const,
       stiffness: 120,
       damping: 15,
-    } as any,
+    },
   },
-};
+}as any;
 
-const overlayVariants: Variants = {
+const overlayVariants= {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -67,7 +66,7 @@ const overlayVariants: Variants = {
       duration: 0.2,
     },
   },
-};
+}as any;
 
 // --- HELPER FUNCTION: GET DYNAMIC ICON ---
 const getTypeIcon = (type: string) => {
