@@ -44,9 +44,9 @@ export default function PortfolioBuilderPage() {
   
   // Form State
   const [formData, setFormData] = useState({
-    name: "Eleojo Arawa",
-    role: "Frontend Software Engineer",
-    bio: "I build accessible, pixel-perfect digital experiences. Specializing in React, Next.js, and high-performance web architecture.",
+    name: "Enter your name",
+    role: "Enter your role",
+    bio: "Enter your bio",
     theme: THEMES[0] // Default to Neon Pink
   });
 
@@ -304,7 +304,7 @@ URL.revokeObjectURL(url);
                 <span className="text-sm font-bold text-text-primary">Projects Auto-Synced</span>
               </div>
               <p className="text-xs text-text-secondary leading-relaxed">
-                The AI is pulling your project data directly from your Career Assistant history. No manual entry needed.
+                Fill in your details and what you would like to show on your portfolio, the above entries are just placeholders
               </p>
             </div>
             
