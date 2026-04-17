@@ -426,11 +426,11 @@ URL.revokeObjectURL(url);
                   <iframe srcDoc={generatedCode} className="w-full h-full border-none" />
                   
                   {/* Floating Deploy Button inside preview */}
-                  <div className="absolute bottom-6 right-6">
+                  {/* <div className="absolute bottom-6 right-6">
                      <button className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-bold shadow-2xl hover:scale-105 transition-transform">
                        <ExternalLink className="w-4 h-4" /> Deploy to Vercel
                      </button>
-                  </div>
+                  </div> */}
                 </motion.div>
               )}
 
