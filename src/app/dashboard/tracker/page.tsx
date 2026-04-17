@@ -25,7 +25,7 @@ const itemVariants: Variants = {
       type: "spring" as const,
       stiffness: 100,
       damping: 15
-    }
+    }as any
   }
 };
 
@@ -39,7 +39,7 @@ const modalVariants: Variants = {
       type: "spring" as const,
       stiffness: 120,
       damping: 15,
-    },
+    }as any,
   },
   exit: {
     opacity: 0,
@@ -49,7 +49,7 @@ const modalVariants: Variants = {
       type: "spring" as const,
       stiffness: 120,
       damping: 15,
-    },
+    } as any,
   },
 };
 
