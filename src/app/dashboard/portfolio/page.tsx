@@ -423,7 +423,6 @@ URL.revokeObjectURL(url);
 
               {!isGenerating && hasGenerated && (
                 <motion.div key="output" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full h-full relative">
-                  console.log("GENERATED HTML:", generatedCode);
                   <iframe srcDoc={generatedCode} className="w-full h-full border-none" />
                   
                   {/* Floating Deploy Button inside preview */}
