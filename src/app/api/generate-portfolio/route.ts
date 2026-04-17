@@ -28,6 +28,12 @@ ONLY enhance descriptions where placeholders exist
 Return ONLY HTML
 Keep structure EXACTLY the same
 Do NOT remove styles or layout
+Generate a powerful, specific hero headline based on the user's role
+Replace:
+  HEADLINE_MAIN → a strong, bold statement about what the person does
+  HEADLINE_SUB → a short impactful phrase that complements it
+Make it feel premium, modern, and tailored to the role
+Avoid generic phrases like "digital experiences" unless relevant
 Do NOT explain anything
 
 TEMPLATE:
@@ -35,8 +41,8 @@ TEMPLATE:
 <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>${name}</title> <script src="https://cdn.tailwindcss.com"></script> <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet"> <style> body { font-family: 'Space Grotesk', sans-serif; background:#030303; color:#f3f4f6; overflow-x:hidden; } /* 🔥 HERO GLOW BACKGROUND */ .hero-bg { position:absolute; width:600px; height:600px; background: radial-gradient(circle, ${theme.hex}20 0%, transparent 70%); top:-200px; left:50%; transform:translateX(-50%); filter: blur(80px); z-index:-1; } .bento-card { background:#111; border-radius:20px; padding:20px; transition:0.3s; } .bento-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px ${theme.hex}30; } .gradient-text { background: linear-gradient(135deg, #fff, ${theme.hex}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } </style> </head> <body> <!-- HERO --> <section class="min-h-screen flex items-center justify-center px-6 pt-32 text-center relative"> <div class="hero-bg"></div> <div class="max-w-3xl mx-auto">
 
 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-  Crafting <span class="gradient-text">digital experiences</span><br/>
-  that stand out
+  HEADLINE_MAIN <br/>
+  <span class="gradient-text">HEADLINE_SUB</span>
 </h1>
 
 <h2 class="text-xl mb-4" style="color:${theme.hex}">
