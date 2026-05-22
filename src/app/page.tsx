@@ -4,6 +4,7 @@ import { Variants } from "framer-motion";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Target, Calendar, FileText, Share2, Globe, ArrowRight, Sparkles, CheckCircle2, Zap } from "lucide-react";
+import Image from "next/image";
 
 // --- ANIMATION VARIANTS ---
 
@@ -39,11 +40,16 @@ export default function Home() {
 
       {/* ---------------- NAVIGATION ---------------- */}
       <nav className="fixed top-0 w-full border-b border-white/5 bg-background/60 backdrop-blur-xl z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="font-bold text-lg sm:text-xl tracking-tight flex items-center gap-2">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded bg-gradient-to-br from-primary to-accent-blue shadow-[0_0_15px_rgba(157,78,221,0.5)]" />
-            <span className="hidden sm:inline">Career Accelerator</span>
-            <span className="sm:hidden">Accelerator</span>
+            <Image
+              src="/logo.png"
+              alt="AI Career Accelerator Logo"
+              width={300}
+              height={80}
+              priority
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="flex items-center gap-4 sm:gap-6">
             <Link href="/login" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">

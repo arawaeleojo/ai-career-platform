@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { 
   LayoutDashboard, 
   Target, 
@@ -109,10 +110,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         
         {/* Brand & Mobile Close Button */}
         <div className="h-20 flex items-center justify-between px-6 border-b border-white/5">
-          <Link href="/" className="font-bold text-lg tracking-tight flex items-center gap-2">
-            <div className="w-6 h-6 rounded bg-gradient-to-br from-primary to-accent-blue shadow-[0_0_15px_rgba(157,78,221,0.5)]" />
-            <span className="hidden sm:inline">Career Accelerator</span>
-            <span className="sm:hidden">Accelerator</span>
+          <Link
+            href="/"
+            className="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src="/logo.png"
+              alt="AI Career Accelerator Logo"
+              width={220}
+              height={60}
+              priority
+              className="h-12 w-auto object-contain"
+            />
           </Link>
           <button 
             onClick={() => setIsMobileMenuOpen(false)}

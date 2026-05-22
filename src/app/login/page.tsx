@@ -6,6 +6,7 @@ import { Mail, Lock, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const cardVariant = {
 hidden: { opacity: 0, y: 40, scale: 0.95 },
@@ -61,9 +62,18 @@ return (
             <div className="relative z-10 space-y-8">
 
                 <div className="text-center space-y-2">
-                    <Link href="/" className="inline-flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
-                        <div className="w-5 h-5 rounded-sm bg-gradient-to-br from-primary to-accent-blue shadow-[0_0_10px_rgba(157,78,221,0.5)]" />
-                        <span className="font-bold text-sm tracking-tight text-text-primary">Career Accelerator</span>
+                    <Link
+                        href="/"
+                        className="inline-flex items-center justify-center mb-4 hover:opacity-80 transition-opacity"
+                    >
+                        <Image
+                            src="/logo.png"
+                            alt="AI Career Accelerator Logo"
+                            width={220}
+                            height={60}
+                            priority
+                            className="h-12 w-auto object-contain"
+                        />
                     </Link>
                     <h1 className="text-3xl font-bold tracking-tight text-text-primary">
                         Welcome back
